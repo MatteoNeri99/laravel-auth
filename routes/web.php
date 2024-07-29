@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Andmin\ProjectController;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware('auth')->name('admin.')->prefix('admin/')->group(function(){
+    Route::resource('/projects', ProjectController::class);
+
+});
