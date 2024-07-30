@@ -10,7 +10,7 @@
 
         <p>descrizione: {{$project->description}} </p>
         <p> date: {{$project->date}} </p>
-        <img src="{{$project->image}}" alt="">
+        <img class="img-fluid" src="{{$project->image}}" alt="{{$project->title}}">
         <a href="{{ route('admin.projects.index') }}" class="btn btn-primary card-link">Mostra tutti i progetti</a>
         </div>
     </div>

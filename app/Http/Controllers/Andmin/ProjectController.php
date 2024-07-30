@@ -22,7 +22,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        $project=new Project();
+        return view ('admin\project\create', compact('project'));
     }
 
     /**
@@ -30,7 +31,24 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=$request->validate([
+            'title' => 'required|max:255|min:4',
+            'date'  =>  'required|date',
+            'description'  => 'required|max:255|min:4',
+            'image'  => 'nullable'
+            ]);
+
+        $newProject= new Project();
+        $newProject->title = $data['title'];
+        $newProject->date = $data['date'];
+        $newProject->description= $data['description'];
+        $newProject->image = $data['image'];
+        $newProject->save();
+
+        $newProject=Project::create($data);
+
+        return redirect()->route('admin\project\show' , $newProject);
+
     }
 
     /**
@@ -45,24 +63,35 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Project $project)
     {
-        //
+        return view ('admin\project\edit', compact('project'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Project $project)
     {
-        //
+        $data=$request->validate([
+            'title' => 'required|max:255|min:4',
+            'date'  =>  'required|date',
+            'description'  => 'required|max:255|min:4',
+            'image'  => 'max:255|min:4',
+            ]);
+
+        $project->update($data);
+
+        return redirect()->route('admin\project\update' , $project);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Project $project)
     {
-        //
+        $project->delete();
+
+        return redirect()->route('admin\project\index');
     }
 }

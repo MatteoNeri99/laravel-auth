@@ -20,14 +20,14 @@ class ProjectSeeder extends Seeder
                 'title' => 'london-trip',
                 'date' => '2024-04-02',
                 'description' => 'progetto in html e css',
-                'image' => '../img/viaggioLondra.png'
+                'image' => 'img/viaggioLondra.png'
             ],
 
             [
                 'title' => 'campominato',
                 'date' => '2024-05-18',
                 'description' => 'progetto in js',
-                'image' => '../img/campominato.png'
+                'image' => 'img/campominato.png'
 
             ],
 
@@ -35,7 +35,7 @@ class ProjectSeeder extends Seeder
                 'title' => 'boolzapp',
                 'date' => '2024-05-31',
                 'description' => 'progetto in vue-js',
-                'image' => '../img/boolzapp.png'
+                'image' => 'img/boolzapp.png'
 
             ],
 
@@ -43,7 +43,7 @@ class ProjectSeeder extends Seeder
                 'title' => 'laravel-comics',
                 'date' => '2024-07-15',
                 'description' => 'progetto in laravel',
-                'image' => '../img/dc-comics.png'
+                'image' => 'img/dc-comics.png'
 
             ],
 
