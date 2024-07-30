@@ -56,7 +56,7 @@ class ProjectSeeder extends Seeder
             $newProject->title = $project['title'];
             $newProject->date = $project['date'];
             $newProject->description= $project['description'];
-            $newProject->image = $project['image'];
+            $newProject->image = fake()->imageUrl();
             $newProject->save();
 
         };

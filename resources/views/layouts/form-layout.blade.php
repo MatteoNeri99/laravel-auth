@@ -36,7 +36,7 @@
 
                 <label for="date" class="form-label">date</label>
 
-                <input type="date" class="form-control" id="date" aria-describedby="date" name="date" value="{{ old('date',$project->date) }}">
+                <input type="date" class="form-control" id="date" aria-describedby="date" name="date" value="{{ old('date', $project->date) }}">
 
               </div>
 
@@ -55,7 +55,7 @@
 
                 <label for="specie" class="form-label">Img</label>
 
-                <input type="Img" class="form-control" id="Img" aria-describedby="Img" name="Img" value="{{ old('Img',$project->Img) }}">
+                <input type="text" class="form-control" id="image" aria-describedby="image" name="image" value="{{ old('image',$project->image) }}">
 
               </div>
 

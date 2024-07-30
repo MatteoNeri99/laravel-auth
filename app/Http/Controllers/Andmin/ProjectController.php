@@ -45,9 +45,8 @@ class ProjectController extends Controller
         $newProject->image = $data['image'];
         $newProject->save();
 
-        $newProject=Project::create($data);
 
-        return redirect()->route('admin\project\show' , $newProject);
+        return redirect()->route('admin.projects.show' , $newProject);
 
     }
 
@@ -65,7 +64,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view ('admin\project\edit', compact('project'));
+        return view ('admin.project.edit', compact('project'));
     }
 
     /**
@@ -77,12 +76,12 @@ class ProjectController extends Controller
             'title' => 'required|max:255|min:4',
             'date'  =>  'required|date',
             'description'  => 'required|max:255|min:4',
-            'image'  => 'max:255|min:4',
+            'image'  => 'nullable',
             ]);
 
         $project->update($data);
 
-        return redirect()->route('admin\project\update' , $project);
+        return redirect()->route('admin.projects.update' , $project);
     }
 
     /**
@@ -92,6 +91,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('admin\project\index');
+        return redirect()->route('admin.projects.index');
     }
 }
