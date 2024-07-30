@@ -13,8 +13,54 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([
-            ProjectSeeder::class,
-        ]);
+
+
+        $projects = [
+            [
+                'title' => 'london-trip',
+                'date' => '2024-04-02',
+                'description' => 'progetto in html e css',
+                'image' => 'resources/img/viaggioLondra.png'
+            ],
+
+            [
+                'title' => 'campominato',
+                'date' => '2024-05-18',
+                'description' => 'progetto in js',
+                'image' => 'resources/img/campominato.png'
+
+            ],
+
+            [
+                'title' => 'boolzapp',
+                'date' => '2024-05-31',
+                'description' => 'progetto in vue-js',
+                'image' => 'resources/img/boolzapp.png'
+
+            ],
+
+            [
+                'title' => 'laravel-comics',
+                'date' => '2024-07-15',
+                'description' => 'progetto in laravel',
+                'image' => 'resources/img/dc-comics.png'
+
+            ],
+
+
+        ];
+
+        foreach ($projects as $project ) {
+
+            $newProject= new Project();
+            $newProject->title = $project['title'];
+            $newProject->date = $project['date'];
+            $newProject->description= $project['description'];
+            $newProject->image = $project['image'];
+            $newProject->save();
+
+        };
+
+
     }
 }
