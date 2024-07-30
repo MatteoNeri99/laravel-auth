@@ -20,17 +20,18 @@
                 <td>{{$project->title}}</td>
                 <td>{{$project->date}}</td>
                 <td>azioni</td>
-        @endforeach
-{{--
-                <td> <a href="{{ Route('admin.projects.show', $animal->id) }}" class="btn btn-primary">Scopri di più</a> </td>
-                <td> <a href="{{ Route('admin.projects.edit', $animal) }}" class="btn btn-success">Modifica</a> </td>
+
+
+                <td> <a href="{{ Route('admin.projects.show', $project) }}" class="btn btn-primary">Scopri di più</a> </td>
+                {{-- {{-- <td> <a href="{{ Route('admin.projects.edit', $animal) }}" class="btn btn-success">Modifica</a> </td>
                 <td><form action="{{ Route('admin.projects.destroy', $animal) }}" method="POSt" class="d-inline-block">
 
                     @method('DELETE')
                     @csrf
                     <button type="submit" class="btn btn-warning">Elimina</button> --}}
 
-                {{-- </form></td> --}}
+                {{-- </form></td>--}}
+                @endforeach
 
             </tbody>
 
